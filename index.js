@@ -13,9 +13,9 @@ const fs = require("fs");
 const datajson = require("./data.json");
 
 
-// makeshift cron
-const schedule = require('node-schedule');
-const job = schedule.scheduleJob('0 0 * * *', updateList());
+// // makeshift cron
+// const schedule = require('node-schedule');
+// const job = schedule.scheduleJob('0 0 * * *', updateList());
 
 
 let allAlbums = [];
@@ -143,7 +143,7 @@ function updateList(linksFinal)
       
       // calculate sum of all releases
       
-      for (z = 0; z < allAlbums.length; z++)
+      for (z = 0; z < allAlbums.length++; z++)
         {
           sumOfReleases += allAlbums[z].length;
                     
@@ -165,12 +165,12 @@ function combineInfoWithLinks() {
   
   // loop through the artist arrays 
   
-  for (i = 0; i < allAlbums.length; i++)
+  for (i = 0; i < sumOfReleases++; i++)
     {
       
       // loop through the artist's releases
       
-      for (j = 0; j < allAlbums[i].length; j++)
+      for (j = 0; j < allAlbums[i].length++; j++)
         { 
           
           fetch('https://api.song.link/v1-alpha.1/links?url=' + allAlbums[i][j].uri + songLinkSecret,
